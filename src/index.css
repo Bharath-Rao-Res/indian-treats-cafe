@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-dark: #24150F;
+  --color-bg-surface: #2E1B13;
+  --color-bg-card: #352017;
+  --color-bg-card-hover: #3E261B;
+  --color-coffee-deep: #3B2418;
+  --color-terracotta: #A95F35;
+  --color-gold: #C9A24A;
+  --color-gold-light: #E5C06E;
+  --color-beige: #E8D7BD;
+  --color-cream: #F7F0E5;
+  --color-white: #FFFDF8;
+  --color-gold-border: rgba(201, 162, 74, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #24150F;
+  color: #F7F0E5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #24150F;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(169, 95, 53, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(201, 162, 74, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Typography styles */
+.font-serif-heading {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #24150F;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A2E1F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A24A;
+}
+
+/* Indian Motif Decorative Pattern (Subtle SVG background) */
+.bg-mandala-pattern {
+  background-image: radial-gradient(rgba(201, 162, 74, 0.08) 1px, transparent 1px), radial-gradient(rgba(169, 95, 53, 0.05) 1px, #24150F 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.bg-wood-tint {
+  background-color: #2D1A12;
+  background-image: linear-gradient(180deg, rgba(201, 162, 74, 0.04) 0%, rgba(36, 21, 15, 0.8) 100%);
+}
+
+/* Gold Gradient Button */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A24A 50%, #B2882E 100%);
+  color: #1A0F0A;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(201, 162, 74, 0.28);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E5C06E 0%, #D4AF37 50%, #C9A24A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 162, 74, 0.42);
+}
+
+.btn-outline-gold {
+  border: 1.5px solid #C9A24A;
+  color: #E8D7BD;
+  background: rgba(201, 162, 74, 0.06);
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background: rgba(201, 162, 74, 0.16);
+  color: #FFFDF8;
+  border-color: #E5C06E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(201, 162, 74, 0.2);
+}
+
+/* Card Glow Effect */
+.card-cafe {
+  background: linear-gradient(160deg, #352017 0%, #2A1810 100%);
+  border: 1px solid rgba(201, 162, 74, 0.18);
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-cafe:hover {
+  border-color: rgba(201, 162, 74, 0.48);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(201, 162, 74, 0.12);
+}
+
+/* Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFFDF8 20%, #E5C06E 55%, #C9A24A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slow Pulse & Float Animations */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 24s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Shimmer on luxury accents */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, rgba(201, 162, 74, 0) 0%, rgba(201, 162, 74, 0.25) 50%, rgba(201, 162, 74, 0) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 3.5s infinite;
+}
+
+/* Veg / Non-Veg Icons */
+.veg-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #22c55e;
+  border-radius: 4px;
+  background-color: rgba(34, 197, 94, 0.12);
+}
+.veg-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+}
+
+.non-veg-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #ef4444;
+  border-radius: 4px;
+  background-color: rgba(239, 68, 68, 0.12);
+}
+.non-veg-indicator-dot {
+  width: 0;
+  height: 0;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  border-bottom: 8px solid #ef4444;
+}
+
+/* Glassmorphic elements */
+.glass-panel {
+  background: rgba(43, 24, 16, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 162, 74, 0.22);
+}
