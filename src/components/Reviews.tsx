@@ -96,7 +96,7 @@ export const Reviews: React.FC = () => {
             href={CAFE_INFO.googleMapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn-outline-gold inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg"
+            className="btn-outline-gold inline-flex items-center gap-2.5 px-9 py-4 rounded-full text-sm font-bold uppercase tracking-wider shadow-xl hover:scale-105 transition-all"
           >
             <span>Read More Google Reviews</span>
             <ExternalLink className="w-4 h-4 text-[#C9A24A]" />

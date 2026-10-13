@@ -42,23 +42,23 @@ export const OrderCTA: React.FC = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto justify-center">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto justify-center">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="btn-gold w-full sm:w-auto px-9 py-4 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl"
+            className="btn-gold w-full sm:w-auto px-10 py-4.5 sm:px-12 sm:py-5 rounded-full text-base sm:text-lg font-extrabold uppercase tracking-wider flex items-center justify-center gap-3 shadow-[0_8px_30px_rgba(201,162,74,0.45)] min-w-[220px] hover:scale-105 transition-all"
           >
-            <ShoppingBag className="w-4 h-4 text-[#1A0F0A]" />
-            <span>ORDER NOW</span>
+            <ShoppingBag className="w-5 h-5 text-[#1A0F0A]" />
+            <span>Order Now</span>
           </button>
 
           <a
             href={CAFE_INFO.googleMapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn-outline-gold w-full sm:w-auto px-8 py-4 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 backdrop-blur-md"
+            className="btn-outline-gold w-full sm:w-auto px-10 py-4.5 sm:px-12 sm:py-5 rounded-full text-base sm:text-lg font-extrabold uppercase tracking-wider flex items-center justify-center gap-3 backdrop-blur-md shadow-xl min-w-[220px] hover:scale-105 transition-all"
           >
-            <Navigation className="w-4 h-4 text-[#C9A24A]" />
-            <span>GET DIRECTIONS</span>
+            <Navigation className="w-5 h-5 text-[#C9A24A]" />
+            <span>Get Directions</span>
           </a>
         </div>
 

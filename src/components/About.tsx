@@ -106,9 +106,9 @@ export const About: React.FC = () => {
           </div>
 
           {/* Right Column: Story Text & Occasions */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
             
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A24A] mb-2 flex items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9A24A] mb-2 flex items-center justify-center lg:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C9A24A]" />
               Welcome to Madurai's Hidden Gem
             </span>
@@ -126,15 +126,15 @@ export const About: React.FC = () => {
             </p>
 
             {/* Suitable For Tags */}
-            <div className="mb-10">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#C9A24A] mb-3.5">
+            <div className="mb-10 w-full">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#C9A24A] mb-3.5 text-center lg:text-left">
                 The Perfect Destination For:
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {OCCASIONS.map((occ) => (
                   <div
                     key={occ.name}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#352017]/80 border border-[#C9A24A]/20 text-xs text-[#E8D7BD] hover:border-[#C9A24A]/50 hover:bg-[#3E261B] transition-colors"
+                    className="flex items-center justify-center sm:justify-start gap-2 px-3 py-2 rounded-xl bg-[#352017]/80 border border-[#C9A24A]/20 text-xs text-[#E8D7BD] hover:border-[#C9A24A]/50 hover:bg-[#3E261B] transition-colors"
                   >
                     {iconMap[occ.icon]}
                     <span className="font-medium">{occ.name}</span>
@@ -144,7 +144,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Quick Feature Ticks */}
-            <div className="flex flex-wrap gap-4 pt-2 border-t border-[#C9A24A]/15">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 border-t border-[#C9A24A]/15 w-full">
               <div className="flex items-center gap-2 text-xs text-[#FFFDF8]">
                 <CheckCircle2 className="w-4 h-4 text-[#22c55e]" />
                 <span>Hygienic & Fresh Kitchen</span>

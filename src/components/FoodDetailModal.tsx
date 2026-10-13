@@ -31,7 +31,7 @@ export const FoodDetailModal: React.FC<FoodDetailModalProps> = ({ dish, onClose 
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg bg-[#24150F] rounded-3xl border-2 border-[#C9A24A]/40 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+        className="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#24150F] rounded-3xl border-2 border-[#C9A24A]/40 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 scrollbar-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Image */}
@@ -148,14 +148,14 @@ export const FoodDetailModal: React.FC<FoodDetailModalProps> = ({ dish, onClose 
               {/* Add Button */}
               <button
                 onClick={handleAdd}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg transition-all ${
+                className={`px-7 py-3 rounded-xl text-sm font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl hover:scale-105 active:scale-95 transition-all ${
                   added ? 'bg-[#22c55e] text-white' : 'btn-gold'
                 }`}
               >
                 {added ? (
                   <>
                     <Check className="w-4 h-4" />
-                    <span>Added!</span>
+                    <span>Added to Order!</span>
                   </>
                 ) : (
                   <>

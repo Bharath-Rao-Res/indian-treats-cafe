@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CAFE_INFO } from '../data/cafeData';
 import { useCart } from '../context/CartContext';
-import { Menu, X, ShoppingBag, Phone, MapPin, Utensils, Sparkles } from 'lucide-react';
+import { Menu, X, ShoppingBag, Phone, MapPin } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,55 +39,29 @@ export const Navbar: React.FC = () => {
             : 'bg-gradient-to-b from-[#1A0F0A]/90 via-[#24150F]/50 to-transparent py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo Brand */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden border-2 border-[#C9A24A] shadow-md group-hover:border-[#E5C06E] transition-colors">
-              <img
-                src="/images/cafe_logo_emblem.jpg"
-                alt="The Indian Treats Cafe Emblem"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif-heading font-bold text-lg sm:text-xl tracking-wider text-[#FFFDF8] group-hover:text-[#E5C06E] transition-colors leading-tight">
-                THE INDIAN TREATS
-              </span>
-              <span className="text-[10px] sm:text-xs tracking-[0.25em] text-[#C9A24A] font-medium uppercase">
-                Cafe · Madurai
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-center min-h-[44px]">
+          {/* Desktop Navigation Links - Perfectly Centered */}
+          <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-[#E8D7BD] hover:text-[#C9A24A] transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C9A24A] hover:after:w-full after:transition-all after:duration-300"
+                className="text-sm font-semibold tracking-wide text-[#E8D7BD] hover:text-[#C9A24A] transition-colors duration-200 relative py-1 px-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C9A24A] hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              href="#menu"
-              className="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full border border-[#C9A24A]/40 text-[#E8D7BD] hover:bg-[#C9A24A]/15 hover:border-[#C9A24A] transition-all flex items-center gap-1.5"
-            >
-              <Utensils className="w-3.5 h-3.5 text-[#C9A24A]" />
-              View Menu
-            </a>
-
+          {/* Desktop Cart Trigger (Right Aligned Floating) */}
+          <div className="hidden lg:flex items-center absolute right-4 sm:right-6 lg:right-8">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="btn-gold px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 relative shadow-lg"
+              className="relative p-2.5 rounded-full bg-[#2E1B13]/80 border border-[#C9A24A]/30 text-[#E8D7BD] hover:text-[#FFFDF8] hover:border-[#C9A24A] hover:bg-[#3E261B] transition-all cursor-pointer shadow-md"
+              aria-label="View Cart"
+              title="View Cart"
             >
-              <ShoppingBag className="w-4 h-4 text-[#1A0F0A]" />
-              <span>Order Now</span>
+              <ShoppingBag className="w-5 h-5 text-[#C9A24A]" />
               {totalItems > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 bg-[#A95F35] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#24150F] animate-bounce">
                   {totalItems}
@@ -96,27 +70,29 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Right Controls */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile Header Controls */}
+          <div className="flex items-center justify-between w-full lg:hidden">
             <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#E8D7BD] hover:text-[#C9A24A] focus:outline-none"
-              aria-label="View Cart"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg text-[#E8D7BD] hover:text-[#C9A24A] hover:bg-[#352017] focus:outline-none transition-colors flex items-center gap-2"
+              aria-label="Toggle Navigation Menu"
             >
-              <ShoppingBag className="w-6 h-6 text-[#C9A24A]" />
-              {totalItems > 0 && (
-                <span className="absolute top-0 right-0 bg-[#A95F35] text-white text-[10px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border border-[#24150F]">
-                  {totalItems}
-                </span>
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6 text-[#C9A24A]" /> : <Menu className="w-6 h-6 text-[#C9A24A]" />}
+              <span className="text-xs uppercase tracking-wider font-semibold text-[#E8D7BD]">Menu</span>
             </button>
 
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-[#E8D7BD] hover:text-[#C9A24A] hover:bg-[#352017] focus:outline-none transition-colors"
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-[#E8D7BD] hover:text-[#C9A24A] focus:outline-none flex items-center gap-1.5"
+              aria-label="View Cart"
             >
-              {isMobileMenuOpen ? <X className="w-7 h-7 text-[#C9A24A]" /> : <Menu className="w-7 h-7 text-[#C9A24A]" />}
+              <ShoppingBag className="w-5 h-5 text-[#C9A24A]" />
+              <span className="text-xs uppercase tracking-wider font-semibold text-[#E8D7BD]">Cart</span>
+              {totalItems > 0 && (
+                <span className="bg-[#A95F35] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-[#24150F]">
+                  {totalItems}
+                </span>
+              )}
             </button>
           </div>
         </div>

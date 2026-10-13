@@ -209,9 +209,9 @@ export const CartDrawer: React.FC = () => {
 
               <button
                 onClick={handleSubmitOrder}
-                className="btn-gold flex-1 py-3.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl"
+                className="btn-gold flex-1 py-4 rounded-xl text-sm sm:text-base font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl hover:scale-[1.02] active:scale-98 transition-all"
               >
-                <Send className="w-4 h-4 text-[#1A0F0A]" />
+                <Send className="w-5 h-5 text-[#1A0F0A]" />
                 <span>Place Order via WhatsApp</span>
               </button>
             </div>

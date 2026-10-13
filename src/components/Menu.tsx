@@ -231,7 +231,7 @@ export const Menu: React.FC<MenuProps> = ({ onSelectDish }) => {
 
                     <button
                       onClick={(e) => handleAddToCart(e, dish)}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-md ${
+                      className={`px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md hover:scale-105 active:scale-95 ${
                         addedItemIds[dish.id]
                           ? 'bg-[#22c55e] text-white scale-105'
                           : 'btn-gold'
@@ -239,12 +239,12 @@ export const Menu: React.FC<MenuProps> = ({ onSelectDish }) => {
                     >
                       {addedItemIds[dish.id] ? (
                         <>
-                          <Check className="w-3.5 h-3.5" />
+                          <Check className="w-4 h-4" />
                           <span>Added!</span>
                         </>
                       ) : (
                         <>
-                          <Plus className="w-3.5 h-3.5" />
+                          <Plus className="w-4 h-4 text-[#1A0F0A]" />
                           <span>Add to Order</span>
                         </>
                       )}
@@ -257,7 +257,7 @@ export const Menu: React.FC<MenuProps> = ({ onSelectDish }) => {
         )}
 
         {/* View Full Menu Action CTA Banner */}
-        <div className="mt-16 text-center bg-gradient-to-r from-[#352017] via-[#43291D] to-[#352017] p-8 rounded-3xl border border-[#C9A24A]/30 shadow-2xl relative overflow-hidden">
+        <div className="mt-16 text-center bg-gradient-to-r from-[#352017] via-[#43291D] to-[#352017] p-8 sm:p-10 rounded-3xl border border-[#C9A24A]/30 shadow-2xl relative overflow-hidden">
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9A24A] mb-1">
               Complete Cafe Catalog
@@ -265,24 +265,24 @@ export const Menu: React.FC<MenuProps> = ({ onSelectDish }) => {
             <h3 className="font-serif-heading font-bold text-2xl sm:text-3xl text-[#FFFDF8] mb-3">
               Looking for our Full Menu & Combos?
             </h3>
-            <p className="text-xs sm:text-sm text-[#E8D7BD]/80 mb-6 max-w-lg">
+            <p className="text-xs sm:text-sm text-[#E8D7BD]/80 mb-8 max-w-lg">
               We also serve gourmet sandwiches, refreshing iced coffees, and seasonal specials. WhatsApp us or visit our counter in Madurai to explore the full cafe experience!
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3.5">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto justify-center">
               <a
                 href={`https://wa.me/${CAFE_INFO.whatsappNumber}?text=Hello%20The%20Indian%20Treats%20Cafe,%20please%20send%20me%20your%20full%20menu%20and%20today's%20specials!`}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-gold px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl"
+                className="btn-gold w-full sm:w-auto px-9 py-4 sm:px-10 sm:py-4.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-xl hover:scale-105"
               >
-                <ShoppingBag className="w-4 h-4 text-[#1A0F0A]" />
-                <span>VIEW FULL MENU ON WHATSAPP</span>
+                <ShoppingBag className="w-5 h-5 text-[#1A0F0A]" />
+                <span>View Full Menu on WhatsApp</span>
               </a>
 
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="btn-outline-gold px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider"
+                className="btn-outline-gold w-full sm:w-auto px-8 py-4 sm:px-9 sm:py-4.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider hover:scale-105"
               >
                 Checkout Current Order
               </button>

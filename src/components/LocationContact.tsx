@@ -132,12 +132,12 @@ export const LocationContact: React.FC = () => {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               <a
                 href={CAFE_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-gold py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+                className="btn-gold py-3.5 px-5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all"
               >
                 <Navigation className="w-4 h-4 text-[#1A0F0A]" />
                 <span>Directions</span>
@@ -145,7 +145,7 @@ export const LocationContact: React.FC = () => {
 
               <a
                 href={`tel:${CAFE_INFO.phoneClean}`}
-                className="btn-outline-gold py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
+                className="btn-outline-gold py-3.5 px-5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:scale-105 transition-all"
               >
                 <Phone className="w-4 h-4 text-[#C9A24A]" />
                 <span>Call Now</span>
@@ -153,7 +153,7 @@ export const LocationContact: React.FC = () => {
 
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="py-3 px-4 rounded-xl bg-[#A95F35] hover:bg-[#B86B3E] text-[#FFFDF8] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="py-3.5 px-5 rounded-xl bg-[#A95F35] hover:bg-[#B86B3E] text-[#FFFDF8] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Order Now</span>

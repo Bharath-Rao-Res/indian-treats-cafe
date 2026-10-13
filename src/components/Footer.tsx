@@ -12,10 +12,10 @@ export const Footer: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         
         {/* Top Branding Strip */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-[#C9A24A]/20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-[#C9A24A]/20 text-center md:text-left">
           
-          <div className="flex items-center gap-4 text-center md:text-left">
-            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#C9A24A] shadow-lg flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#C9A24A] shadow-lg flex-shrink-0 mx-auto sm:mx-0">
               <img
                 src="/images/cafe_logo_emblem.jpg"
                 alt="The Indian Treats Cafe Emblem"
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center gap-3">
             <a
               href={CAFE_INFO.socials.instagram}
               target="_blank"
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Middle Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 text-center md:text-left">
           
           {/* Col 1: About Blurb */}
           <div className="md:col-span-4">
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#E8D7BD]/80 font-light leading-relaxed mb-4">
               Inspired by the rich warmth of Indian heritage and the relaxed charm of modern cafe culture. Savor artisan burgers, specialty drinks, and sweet treats in Madurai.
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#E5C06E]">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#E5C06E]">
               <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
               <span>Rated 5.0 ★ by food lovers in Madurai</span>
             </div>
@@ -122,21 +122,21 @@ export const Footer: React.FC = () => {
             </h4>
             
             <div className="space-y-3 text-xs sm:text-sm text-[#E8D7BD]/90">
-              <div className="flex items-start gap-2.5">
+              <div className="flex items-start justify-center md:justify-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#C9A24A] flex-shrink-0 mt-0.5" />
                 <span>
                   Shop No 1 & 2, Theni Road, S.S. Colony 4th Street, Opp. Devaki Speciality Hospital & Scan, Madurai 625016
                 </span>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-center md:justify-start gap-2.5">
                 <Phone className="w-4 h-4 text-[#C9A24A] flex-shrink-0" />
                 <a href={`tel:${CAFE_INFO.phoneClean}`} className="hover:text-[#C9A24A] font-semibold text-[#FFFDF8]">
                   {CAFE_INFO.phone}
                 </a>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-center md:justify-start gap-2.5">
                 <Clock className="w-4 h-4 text-[#C9A24A] flex-shrink-0" />
                 <span>Open Daily · Closes around 12:00 AM</span>
               </div>

@@ -63,9 +63,9 @@ export const FeaturedDish: React.FC = () => {
           </div>
 
           {/* Right Side: Copy, Ingredients & Action */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
             
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#C9A24A] mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#C9A24A] mb-2 justify-center lg:justify-start">
               <span className="w-2 h-2 rounded-full bg-[#C9A24A]" />
               Signature Highlight
             </div>
@@ -78,15 +78,15 @@ export const FeaturedDish: React.FC = () => {
               "Made Fresh. Served With Love."
             </p>
 
-            <IndianMotif variant="divider" className="justify-start my-2" />
+            <IndianMotif variant="divider" className="mx-auto lg:mx-0 my-2" />
 
             <p className="text-sm sm:text-base text-[#E8D7BD]/85 leading-relaxed font-light mb-6">
               Our most celebrated creation in Madurai: A lavish platter of succulent, freshly marinated spiced golden chicken, fried to crunchy perfection and paired with hot roasted garlic potato wedges and a trio of house-crafted gourmet dips.
             </p>
 
             {/* Ingredients Breakdown */}
-            <div className="mb-8 bg-[#2A1810]/70 p-4 sm:p-5 rounded-2xl border border-[#C9A24A]/20">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#C9A24A] mb-3">
+            <div className="mb-8 bg-[#2A1810]/70 p-4 sm:p-5 rounded-2xl border border-[#C9A24A]/20 w-full text-left">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#C9A24A] mb-3 text-center sm:text-left">
                 Signature Platter Includes:
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#E8D7BD]">
@@ -100,10 +100,10 @@ export const FeaturedDish: React.FC = () => {
             </div>
 
             {/* Price and Order Button */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 w-full text-center sm:text-left">
               <div>
                 <span className="text-[11px] uppercase tracking-wider text-[#E8D7BD]/60 block">Signature Price</span>
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline justify-center sm:justify-start gap-2">
                   <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-gold-gradient">
                     ₹{signatureDish.price}
                   </span>
@@ -111,12 +111,12 @@ export const FeaturedDish: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto justify-center">
                 <button
                   onClick={handleOrderSpecial}
-                  className="btn-gold w-full sm:w-auto px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl"
+                  className="btn-gold w-full sm:w-auto max-w-[320px] sm:max-w-none px-10 py-4 sm:px-11 sm:py-4.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl hover:scale-105 transition-all"
                 >
-                  <ShoppingBag className="w-4 h-4 text-[#1A0F0A]" />
+                  <ShoppingBag className="w-5 h-5 text-[#1A0F0A]" />
                   <span>Order This Special</span>
                 </button>
               </div>
